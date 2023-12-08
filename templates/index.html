@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    <title>Drug </title>
+</head>
+<body>
+    
+    <div class="container contact-form">
+        <div class="contact-image">
+            <img src="https://i.ibb.co/cJ2HmVz/drugs.png" alt="rocket_contact" width="20px"/>
+        </div>
+        <form action="{{url_for('predict')}}" method="post">
+            <h3 class="judul">ISI DATA UNTUK KLASIFIKASI</h3>
+           <div class="row">
+                <div class="col-md-6">
+
+                    <div class="form-group">
+                        <input class="form-control" name="umur" type="text" placeholder="Umur Anda" aria-label="default input example">
+                    </div>
+
+                    <div class="form-group">
+                        <select class="form-select form-select-sm" name="jenis_kelamin" aria-label="Small select example">
+                            <option selected>Jenis Kelamin Anda</option>
+                            <option value="0">Perempuan</option>
+                            <option value="1">Laki-Laki</option>
+                          </select>
+                    </div>
+                    <div class="form-group">
+                        <select class="form-select form-select-sm" name="tekanan_darah" aria-label="Small select example">
+                            <option selected>Tekanan Darah Anda</option>
+                            <option value="0">Rendah</option>
+                            <option value="1">Normal</option>
+                            <option value="2">Tinggi</option>
+                          </select>
+                    </div>
+                    <div class="form-group">
+                        
+                    </div>
+                </div>
+                <div class="col-md-6">
+
+                    <div class="form-group">
+                        <select class="form-select form-select-sm" name="kolesterol" aria-label="Small select example">
+                            <option selected>Kolesterol</option>
+                            <option value="0">Normal</option>
+                            <option value="1">Tinggi</option>
+                          </select>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" name="txtName" name="na_k" class="form-control" placeholder="Kadar Natrium/Kalium dalam Darah*" value="" />
+                    </div>
+
+                    
+                </div>
+                
+            </div>
+            <center>
+                <div class="form-group">
+                    <input type="submit" name="btnSubmit" class="btnContact" value="Send Message" />
+                </div>
+            </center>
+
+            <div class="form-group">
+                <h3 id="result">{{ prediction_text }}</h3>
+                
+
+
+                
+            </div>
+            
+        </form>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
